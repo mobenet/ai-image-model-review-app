@@ -2,7 +2,7 @@ import streamlit as st
 import os
 import glob
 
-st.title("ImaGen")
+st.title("ImaGenAI App")
 st.subheader("AI Image Generation Model Reviews")
 
 ARTICLE_DIR = "outputs"
