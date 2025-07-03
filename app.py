@@ -1,17 +1,28 @@
-import gradio as gr
-import pandas as pd
+import streamlit as st
+import os
+import glob
 
-# grouped: DF amb product, sentiment i dominant_topic
-# topic_keywords: dict amb paraules clau per topic
-# articles: dict amb articles generats per prod
+st.title("ImaGen")
+st.subheader("AI Image Generation Model Reviews")
 
+ARTICLE_DIR = "outputs"
+IMAGE_DIR = "images"
 
-def diplay_article(product):
-    summary = format_summary
+articles = [f for f in os.listdir(ARTICLE_DIR) if f.endswith("_article.txt")]
+products = [f.replace("_article.txt", "").replace("_", " ") for f in articles]
 
-demo = gr.Interface(
-    fn=display_article, 
-)
+selected_product = st.selectbox("Select an image generation model:", products)
 
-if __name__ == "__main__":
-    demo.launch()
+if selected_product:
+    image_pattern = os.path.join(IMAGE_DIR, f"{selected_product.lower()}*")
+    image_files = glob.glob(image_pattern)
+    if image_files:
+        st.image(image_files[0], use_container_width=True)
+    filename = selected_product.replace(" ", "_") + "_article.txt"
+    file_path = os.path.join(ARTICLE_DIR, filename)
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        article = f.read()
+
+    st.subheader(f"Review Article: {selected_product}")
+    st.write(article)

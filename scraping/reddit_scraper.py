@@ -9,6 +9,9 @@ import time
 class RedditReviewScraper:
     def __init__(self, reddit_client_id: str, reddit_client_secret: str, openai_api_key: str):
         """Initialize reddit."""
+        self.reddit_client_id = reddit_client_id
+        self.reddit_client_secret = reddit_client_secret
+        self.openai_api_key = openai_api_key
         self.reddit = praw.Reddit(
             client_id=self.reddit_client_id,
             client_secret=self.reddit_client_secret,
