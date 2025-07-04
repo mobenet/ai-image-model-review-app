@@ -24,6 +24,24 @@ This project was developed as part of the IronHack AI Engineering program. The a
 | Summarization    | `google-t5/t5-large`        |
 | Sentiment + Keys | `gpt-4` via OpenAI API      |
 | Topic Modeling   | TF-IDF + LDA (scikit-learn) |
+| Article Generator| `gpt-4` via OpenAI API      |
+
+
+## Development History & Alternative Approaches
+
+You can find the full development process in a separate repository:
+
+🔗 **Exploration & Prototyping Repository**  
+[Development Repo](https://github.com/mobenet/ai-image-model-reviews)
+
+This secondary repo includes:
+
+- Initial experiments using Hugging Face sentiment classifiers
+- Topic modeling with BERTopic and Sentence Transformers
+- Exploratory notebooks that were later refined or discarded
+
+The current repository contains the final cleaned version of the project.
+
 
 ## Image Generation Models Analyzed
 
@@ -53,7 +71,7 @@ streamlit run app.py
 ### Features:
 
 * Select a model and read the AI-generated review summary
-* Visual identity and structured layout
+* The Streamlit app is currently not hosted online. For reference, a screenshot of the local version is available in the Images folder.
 
 ## Repository Structure
 
@@ -64,6 +82,9 @@ project/
 ├── generation/             # Article writing with GPT-4
 ├── outputs/                # Generated articles (.txt)
 ├── data/                   # Intermediate data (CSV)
+├── images/                 # Screenshots of the Streamlit app and results
+├── ImaGenAI.pptx           # Final presentation slides
+├── Product_Reviews_Project.pdf  # Ironhack project brief (instructions)
 ├── app.py                  # Streamlit interface
 ├── main.py                 # Main pipeline script
 └── requirements.txt        # Dependencies
@@ -74,8 +95,4 @@ project/
 
 Project created by @mobenet, AI Engineering Student @ IronHack (2025)
 
-## Future Improvements
 
-* Add charts with sentiment distribution
-* Deploy app with Hugging Face Spaces or Streamlit Cloud
-* Extend to other domains beyond image generation
