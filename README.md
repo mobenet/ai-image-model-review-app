@@ -1,6 +1,6 @@
 # ImaGenAI App: An App for AI Image Generation Model Reviews
 
-**ImaGenAI** is a product review aggregator powered by LLMs (Large Language Models). The goal of this project is to help users understand the strengths and weaknesses of popular AI image generation models based on real user feedback collected from Reddit.
+**ImaGenAI** is a product review aggregator powered by natural language processing (NLP) techniques, including Large Language Models (LLMs). The goal of this project is to help users understand the strengths and weaknesses of popular AI image generation models based on real user feedback collected from Reddit.
 
 ## Project Overview
 
